@@ -52,6 +52,11 @@ $ anvil
 4. Deploy the contract:
 
 ```shell
+$ forge script script/DeployFundMe.s.sol:DeployFundMe --rpc-url $(SEPOLIA_RPC_URL) --account sepoliaKey --broadcast
+```
+5. If you want to Deploy and Verify the contract:
+
+```shell
 $ forge script script/DeployFundMe.s.sol:DeployFundMe --rpc-url $(SEPOLIA_RPC_URL) --account sepoliaKey --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY)
 ```
 
