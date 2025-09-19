@@ -45,10 +45,14 @@ $ forge snapshot
 $ anvil
 ```
 
-### Deploy
+### Deploy over Sepolia
+1. Create your local .env file with your variables: SEPOLIA_RPC_URL and ETHERSCAN_API_KEY
+2. execute source .env
+3. Create a local key store: sepoliaKey to avoid sending in console the PRIVATE KEY with command: cast wallet import sepoliaKey --interactive
+4. Deploy the contract:
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/DeployFundMe.s.sol:DeployFundMe --rpc-url $(SEPOLIA_RPC_URL) --account sepoliaKey --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY)
 ```
 
 ### Cast
